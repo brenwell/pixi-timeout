@@ -1,0 +1,46 @@
+{
+  "name": "pixi-timeout",
+  "version": "1.0.0",
+  "description": "Pixi.js plugin. A setTimeout replacement using PIXI.Ticker",
+  "main": "lib.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "npm run build && npm test && npm run lint",
+    "build": "babel index.js --out-file pixi-settimeout.js --source-maps inline",
+    "test": "mocha",
+    "lint": "eslint index.js --fix",
+    "prepublishOnly": "npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brenwell/pixi-timeout.git"
+  },
+  "keywords": [
+    "pixi",
+    "ticker",
+    "requestAnimationFrame",
+    "setTimeout",
+    "plugin"
+  ],
+  "author": "Brendon Blackwell",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brenwell/pixi-timeout/issues"
+  },
+  "homepage": "https://github.com/brenwell/pixi-timeout#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.35",
+    "@babel/core": "^7.0.0-beta.35",
+    "@babel/preset-env": "^7.0.0-beta.35",
+    "canvas-prebuilt": "^1.6.5-prerelease.1",
+    "chai": "^4.1.2",
+    "eslint": "^4.13.1",
+    "jsdom": "11.5.1",
+    "jsdom-global": "3.0.2",
+    "mocha": "^4.0.1",
+    "pixi.js": "^4.6.2",
+    "sinon": "^4.1.3"
+  }
+}
