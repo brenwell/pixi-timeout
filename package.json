@@ -1,6 +1,6 @@
 {
   "name": "pixi-timeout",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Pixi.js plugin. A setTimeout replacement using PIXI.Ticker",
   "main": "lib/pixi-timeout.js",
   "directories": {
