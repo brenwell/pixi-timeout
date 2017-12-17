@@ -1,6 +1,6 @@
 # pixi-timeout
 
-pixi-timeout is a plugin which replicates the behaviour of window.setTimout but uses PIXI.Ticker (requestAnimationFrame) as the method of progressing time. The bonus is that any timeouts will be paused and resumed automatically when you call `PIXI.Application.stop` & `PIXI.Application.start`
+pixi-timeout is a plugin which replicates the behaviour of window.setTimout but uses PIXI.Ticker (requestAnimationFrame) as the method for progressing time. The bonus is that any timeouts will be paused and resumed automatically when you call `PIXI.Application.stop` & `PIXI.Application.start`
 
 
 # Intall
@@ -61,6 +61,6 @@ myApp.start() //resume
 
 ## FPS, Speed & Time
 
-**pixi-timeout** calculates time based on the [PIXI.ticker](http://pixijs.download/release/docs/PIXI.ticker.Ticker.html) settings. It assumes *60fps* is the desired rate and uses the `deltaTime` value from last frame to this frame determine the correct time progression. Additionally it uses the `speed` value from `PIXI.ticker`. So if you wish to adjust the optimal *fps* you can do so buy changing the PIXI.ticker value and pixie-timeout will adjust accordingly
+**pixi-timeout** calculates time based on the [PIXI.ticker](http://pixijs.download/release/docs/PIXI.ticker.Ticker.html) settings. It assumes *60fps* is the desired rate and uses the `deltaTime` value from last frame to this frame to determine the correct time progression. Additionally it uses the `speed` value from the `PIXI.ticker`, so if you wish to adjust the optimal *fps* you can do so by changing the PIXI.ticker value and pixi-timeout will adjust accordingly
 
 [PIXI.ticker docs](http://pixijs.download/release/docs/PIXI.ticker.Ticker.html)
