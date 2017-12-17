@@ -2,16 +2,19 @@
   "name": "pixi-timeout",
   "version": "1.0.2",
   "description": "Pixi.js plugin. A setTimeout replacement using PIXI.Ticker",
-  "main": "pixi-timeout.js",
+  "main": "lib/pixi-timeout.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "start": "npm run build && npm test && npm run lint",
-    "build": "babel index.js --out-file pixi-timeout.js --source-maps inline",
-    "test": "mocha",
+    "start": "npm run build && npm test",
+    "lib": "npm run build && npm run min",
+    "build": "babel index.js -o ./lib/pixi-timeout.js -s inline",
+    "min": "minify index.js -o ./lib/pixi-timeout.min.js",
+    "test": "npm run unit && npm run lint",
+    "unit": "mocha",
     "lint": "eslint index.js --fix",
-    "prepublishOnly": "npm start"
+    "prepublishOnly": "npm run lib && npm test"
   },
   "repository": {
     "type": "git",
@@ -19,6 +22,7 @@
   },
   "keywords": [
     "pixi",
+    "pixi.js",
     "ticker",
     "requestAnimationFrame",
     "setTimeout",
@@ -34,6 +38,7 @@
     "@babel/cli": "^7.0.0-beta.35",
     "@babel/core": "^7.0.0-beta.35",
     "@babel/preset-env": "^7.0.0-beta.35",
+    "babel-minify": "^0.2.0",
     "canvas-prebuilt": "^1.6.5-prerelease.1",
     "chai": "^4.1.2",
     "eslint": "^4.13.1",

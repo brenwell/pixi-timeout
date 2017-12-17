@@ -6,7 +6,7 @@ require('jsdom-global')()
 require('canvas-prebuilt')
 
 require('pixi.js')
-require('../pixi-settimeout.js')
+require('../lib/pixi-timeout.js')
 
 
 describe('Creation', () => {
