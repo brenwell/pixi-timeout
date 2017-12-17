@@ -23,7 +23,7 @@ describe('Creation', () => {
 
 });
 
-describe('Creation', () => {
+describe('Timer Object', () => {
 
     it('PIXI.setTimeout should return timerObject', () => {
         const callback = sinon.spy()

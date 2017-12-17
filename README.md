@@ -1,28 +1,44 @@
 # pixi-timeout
 
-pixi-timeout is a plugin which replicates the behaviour of window.setTimout but uses PIXI.Ticker (requestAnimationFrame) as the method for progressing time. The bonus is that any timeouts will be paused and resumed automatically when you call `PIXI.Application.stop` & `PIXI.Application.start`
+**Pixi-timeout** is a plugin which replicates the behaviour of window.setTimout but uses PIXI.Ticker (requestAnimationFrame) as the method for progressing time. The bonus is that any timeouts will be paused and resumed automatically when you call `PIXI.Application.stop` & `PIXI.Application.start`
 
 
-# Intall
+## Install
 
 ```shell
 npm i pixi-timeout
 ```
 
-# Usage
+## Usage
 
-Basic usage. Simply supply the time to wait in seconds and the function to call upon completion
+### Importing
+
+#### common.js
 
 ```js
 require('pixi.js')
-require('pixi-timeout.js')
+require('pixi-timeout')
+```
+
+#### es6 modules
+
+```js
+import pixi from 'pixi.js'
+import pixiTimeout from 'pixi-timeout'
+```
+
+### Basic usage.
+
+Simply supply the time to wait in seconds and the function to call upon completion
+
+```js
 PIXI.setTimeout(
     2,          // delay in seconds
     callback    // completion handler
 )
 ```
 
-## Clear
+### Clear
 
 There are 2 ways to clear a timeout. First the traditional way
 
@@ -38,14 +54,14 @@ const timer = PIXI.setTimeout(2,callback)
 timer.clear()
 ```
 
-## Finish
+### Finish
 
 You can finish a timer immediately, which will simply cancel the timer and fire the callback.
 
 ```js
 timer.finish()
 ```
-## Pause & Resume
+### Pause & Resume
 
 If you are using PIXI.Application for instantiation then all current timers are automatically paused and resumed when `PIXI.Application.stop` & `PIXI.Application.start` are called. Which is great for keeping audio, tweens and timeouts synchronised.
 
