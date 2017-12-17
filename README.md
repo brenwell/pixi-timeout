@@ -45,3 +45,22 @@ You can finish a timer immediately, which will simply cancel the timer and fire 
 ```js
 timer.finish()
 ```
+## Pause & Resume
+
+If you are using PIXI.Application for instantiation then all current timers are automatically paused and resumed when `PIXI.Application.stop` & `PIXI.Application.start` are called. Which is great for keeping audio, tweens and timeouts synchronised.
+
+```js
+import pix from ‘pixi,js’
+import pixiTimeout from 'pixi-timeout'
+
+const myApp = new PIXI.Application()
+
+myApp.stop() // pause
+myApp.start() //resume
+```
+
+## FPS, Speed & Time
+
+**pixi-timeout** calculates time based on the [PIXI.ticker](http://pixijs.download/release/docs/PIXI.ticker.Ticker.html) settings. It assumes *60fps* is the desired rate and uses the `deltaTime` value from last frame to this frame determine the correct time progression. Additionally it uses the `speed` value from `PIXI.ticker`. So if you wish to adjust the optimal *fps* you can do so buy changing the PIXI.ticker value and pixie-timeout will adjust accordingly
+
+[PIXI.ticker docs](http://pixijs.download/release/docs/PIXI.ticker.Ticker.html)
