@@ -40,7 +40,7 @@ timer.clear()
 
 ## Finish
 
-You can finish a timer immediately, which will simply cancel the timer and call the callback.
+You can finish a timer immediately, which will simply cancel the timer and fire the callback.
 
 ```js
 timer.finish()

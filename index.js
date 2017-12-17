@@ -31,7 +31,7 @@
         {
             progress += delta;
 
-            const elapsed = progress / 60;
+            const elapsed = progress / (60 * pixi.ticker.shared.speed);
 
             if (elapsed > secs) end(true);
         });
